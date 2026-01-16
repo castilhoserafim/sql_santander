@@ -1,9 +1,3 @@
-CREATE TABLE viagens.destinos (
-	id INT PRIMARY KEY,
-	nome VARCHAR(255) NOT NULL UNIQUE COMMENT 'Nome do Destino',
-	descricao VARCHAR(255) NOT NULL COMMENT 'Descrição do Destino'
-);
-
 CREATE TABLE "usuarios" (
   "id" int NOT NULL,
   "nome" varchar(255) NOT NULL COMMENT 'Nome do usuário',
@@ -12,6 +6,12 @@ CREATE TABLE "usuarios" (
   "data_nascimento" date NOT NULL COMMENT 'Date de nascimento do usuário',
   PRIMARY KEY ("id"),
   UNIQUE KEY "email" ("email")
+);
+
+CREATE TABLE viagens.destinos (
+	id INT PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL UNIQUE COMMENT 'Nome do Destino',
+	descricao VARCHAR(255) NOT NULL COMMENT 'Descrição do Destino'
 );
 
 CREATE TABLE "reservas" (
