@@ -17,13 +17,22 @@ SELECT MAX(TIMESTAMPDIFF(YEAR, data_nascimento, CURRENT_DATE())) AS media_idade
 FROM usuarios;
 
 -- Calcula quantidade de reservas por destino --
-SELECT *, COUNT(*) AS total_reservas FROM reservas GROUP BY id_destino ;
+-- Em vez de SELECT *, use SELECT id_destino
+SELECT id_destino, COUNT(*) AS total_reservas 
+FROM reservas 
+GROUP BY id_destino;
 
 
 -- Limit
-SELECT *, COUNT(*) AS total_reservas FROM reservas GROUP BY id_destino LIMIT 1 OFFSET 2;
+SELECT id_destino, COUNT(*) AS total_reservas 
+FROM reservas 
+GROUP BY id_destino 
+LIMIT 1 OFFSET 2;
 
-SELECT *, COUNT(*) AS total_reservas FROM reservas GROUP BY id_destino LIMIT 1;
+SELECT id_destino, COUNT(*) AS total_reservas 
+FROM reservas 
+GROUP BY id_destino 
+LIMIT 1;
 
 -- Ordenação
 SELECT nome
